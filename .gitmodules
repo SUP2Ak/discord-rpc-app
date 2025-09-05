@@ -1,0 +1,6 @@
+[submodule "vendors/sup_mtracker"]
+	path = vendors/sup_mtracker
+	url = https://github.com/SUP2Ak/sup_mtracker.git
+[submodule "vendors/sup_drpc"]
+	path = vendors/sup_drpc
+	url = https://github.com/SUP2Ak/sup_drpc.git
