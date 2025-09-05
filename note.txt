@@ -1,0 +1,75 @@
+discord-rpc-app/                  <- repo racine / workspace
+├── Cargo.toml                    <- workspace root
+├── sup_discord_app/              <- frontend Tauri
+│   ├── Cargo.toml
+│   ├── src-tauri/
+│   │   ├── Cargo.toml
+│   │   └── src/
+│   │       └── main.rs
+│   └── src/                      <- React / TS frontend
+├── vendors/                      <- crates réutilisables
+│   ├── sup_drpc/                 <- crate Discord RPC (submodule)
+│   │   ├── Cargo.toml
+│   │   └── src/
+│   │       ├── lib.rs
+│   │       ├── ipc.rs
+│   │       ├── heartbeat.rs
+│   │       ├── events.rs
+│   │       └── types.rs
+│   └── sup_mtracker/             <- crate Media Tracker (submodule)
+│       ├── Cargo.toml
+│       └── src/
+│           ├── lib.rs
+│           ├── windows.rs
+│           └── unix.rs
+
+=========================================
+
+1. Init sur git sup_drpc & sup_mtracker
+2. puis ensuite (à la racine ici)
+$git init 
+$echo "# Discord RPC App" > README.md
+$git add README.md
+$git commit -m "Initial commit: workspace root"
+3. Ajoutez les submodules
+$git submodule add <https> <folderName>
+4. Init les submodules
+$git submodule update --init --recursive
+5. Puis tout link à la repo principal
+$git add .gitmodules <module1> <module2>
+$git commit -m "blabla"
+$git push -u origin main
+
+Et let's go la structure du projet sera bonne je pense
+
+=========================================
+
+[dependencies]
+sup_drpc = { path = "../sup_drpc" }
+sup_mtracker = { path = "../sup_mtracker" }
+tauri = { version = "2.5", features = ["api-all"] }
+tokio = { version = "1.42", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+===========================================
+
+[workspace]
+members = [
+    "sup_discord_app/src-tauri",
+    "vendors/sup_drpc",
+    "vendors/sup_mtracker"
+]
+
+============================================
+
+discord-rpc-app/                 <- repo principal (frontend)
+├── Cargo.toml                   <- workspace root
+├── sup_discord_app/             <- frontend Tauri
+│   ├── Cargo.toml
+│   └── src-tauri/
+├── sup_drpc/  (git submodule)
+└── sup_mtracker/ (git submodule)
+
+
+=============================================
