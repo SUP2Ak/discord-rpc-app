@@ -2,5 +2,6 @@
 members = [
     "sup_discord_app/src-tauri",
     "vendors/sup_drpc",
-    "vendors/sup_mtracker"
+    "vendors/sup_mtracker",
+    "vendors/sup_common"
 ]

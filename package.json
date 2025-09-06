@@ -1,0 +1,12 @@
+{
+  "name": "sup_discord_app",
+  "scripts": {
+    "initproj": "cd sup_discord_app && bun install",
+    "dev": "cd sup_discord_app && bun tauri dev",
+    "tt": "cd vendors/sup_drpc && cargo run",
+    "deps:check": "cd vendors/sup_common && cargo run --bin deps-checker check",
+    "deps:update": "cd vendors/sup_common && cargo run --bin deps-checker check --update",
+    "deps:interactive": "cd vendors/sup_common && cargo run --bin deps-checker check --update --interactive",
+    "deps:quiet": "cd vendors/sup_common && cargo run --bin deps-checker check --update --quiet"
+  }
+}
