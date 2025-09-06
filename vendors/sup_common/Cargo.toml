@@ -3,5 +3,15 @@ name = "sup_common"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "deps-checker"
+path = "src/bin/deps_checker.rs"
+
 [dependencies]
-# Aucune dépendance externe - seulement des macros de debug
+# Pour le script CLI
+clap = { version = "4.5.47", features = ["derive"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.47.1", features = ["full"] }
+reqwest = { version = "0.12.23", features = ["json"] }
+toml = "0.8"
