@@ -1,0 +1,7 @@
+[package]
+name = "sup_common"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Aucune dépendance externe - seulement des macros de debug
