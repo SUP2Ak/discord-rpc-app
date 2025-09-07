@@ -5,3 +5,4 @@ members = [
     "vendors/sup_mtracker",
     "vendors/sup_common"
 ]
+resolver = "2"
