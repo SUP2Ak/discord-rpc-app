@@ -3849,7 +3849,6 @@ dependencies = [
  "anyhow",
  "discord-rich-presence",
  "serde",
- "sup_common",
 ]
 
 [[package]]
